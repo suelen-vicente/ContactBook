@@ -90,7 +90,7 @@ class ContactsViewController: UITableViewController, UISearchResultsUpdating{
     
     func loadFromAPI(){
         Requests.getContacts { contacts in
-            self.contacts = contacts
+            self.contacts.append(contentsOf: contacts)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
