@@ -41,9 +41,7 @@ class ContactsViewController: UITableViewController, UISearchResultsUpdating{
         let loadFromAPI = UIAlertAction(title: "Load from API", style: .default) { (alert: UIAlertAction!) in
             self.loadFromAPI()
         }
-//        let resetUsers = UIAlertAction(title: "Reset Users", style: .destructive)
         
-        //This was all I supposed to do to make this Reset button work, but I got stuck on the API one and didn't have time
         let resetUsers = UIAlertAction(title: "Reset Users", style: .destructive) { (alert: UIAlertAction) in
             self.contacts = []
             self.tableView.reloadData()
@@ -72,7 +70,6 @@ class ContactsViewController: UITableViewController, UISearchResultsUpdating{
             
             self.contacts.append(Contact(id: 0, email: customUser, firstName: "", lastName: "", avatar: ""))
             
-            // this was the missing line to make this whole add custom user functionality work
             self.tableView.reloadData()
         })
         
@@ -83,9 +80,6 @@ class ContactsViewController: UITableViewController, UISearchResultsUpdating{
         addCustomUser.addAction(add)
         
         present(addCustomUser, animated: true, completion: nil)
-        
-        // this line was moved to add button funcionality
-        //self.tableView.reloadData()
     }
     
     func loadFromAPI(){

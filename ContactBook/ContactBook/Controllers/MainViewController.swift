@@ -13,11 +13,6 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
     @IBAction func touchUpInsideLoginButton(_ sender: Any) {
         guard let password = passwordTextField.text else{
                   return
